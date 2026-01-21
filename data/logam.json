@@ -1,0 +1,33 @@
+{
+  "version": "2026-01-21",
+  "Pb": {
+    "RfD": 0.003,
+    "SF": 0,
+    "BAF": 1.2,
+    "info": "Pb: Gangguan saraf, darah"
+  },
+  "Cd": {
+    "RfD": 0.001,
+    "SF": 0,
+    "BAF": 1.5,
+    "info": "Cd: Ginjal"
+  },
+  "As": {
+    "RfD": 0.0003,
+    "SF": 1.5,
+    "BAF": 0.8,
+    "info": "As: Kanker, kulit"
+  },
+  "Hg": {
+    "RfD": 0.0003,
+    "SF": 0,
+    "BAF": 2.0,
+    "info": "Hg: Neurologis"
+  },
+  "Cr6": {
+    "RfD": 0.003,
+    "SF": 0.5,
+    "BAF": 0.5,
+    "info": "Cr(VI): Karsinogenik"
+  }
+}
