@@ -1,96 +1,86 @@
-/* Body & Container */
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #fffae6;
   margin: 0;
   padding: 20px;
 }
+
 .container {
-  max-width: 700px;
-  margin: 30px auto;
+  max-width: 720px;
+  margin: 40px auto;
   background: #fff;
-  padding: 25px 30px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Titles & Subtitles */
 h1 {
   margin-bottom: 5px;
 }
-h2 { margin-top: 20px; }
-h3 { margin-top: 15px; }
+
 .subtitle {
   color: #666;
   margin-bottom: 20px;
 }
 
-/* Labels & Inputs */
 label {
   font-weight: 600;
   margin-top: 10px;
   display: block;
 }
-input, select {
+
+input, select, button {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
 }
 
-/* Buttons */
+input, select {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 button {
-  background-color: #007bff;
+  margin-top: 20px;
+  background: #0056b3;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 10px;
   cursor: pointer;
-  margin-top: 15px;
-  width: 48%;
 }
-button:hover { background-color: #0056b3; }
-button + button { margin-left: 4%; }
 
-/* Result Box */
+button:hover {
+  background: #003f8a;
+}
+
 .result {
   margin-top: 20px;
   padding: 15px;
   border-radius: 6px;
   font-weight: bold;
-  min-height: 50px;
 }
-.safe { background-color: #d4edda; color: #155724; }
-.risk { background-color: #f8d7da; color: #721c24; }
 
-/* Toggle Input Boxes */
-#sfBox, #rfdBox { margin-top: 10px; }
-
-/* Version Info */
-.version { font-size: 12px; color: #555; margin-bottom: 15px; }
-
-/* Matriks Risiko (opsional styling untuk visualisasi) */
-.matrix {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
-  margin-top: 15px;
+.safe {
+  background: #d4edda;
+  color: #155724;
 }
-.matrix div {
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 4px;
-  color: #fff;
-}
-.matrix .low { background: #28a745; }
-.matrix .medium { background: #ffc107; color: #212529; }
-.matrix .high { background: #dc3545; }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .container { padding: 20px; margin: 15px; }
-  button { width: 100%; margin-left: 0; margin-top: 10px; }
+.risk {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+#sfBox {
+  display: none;
+}
+
+.exposure {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 15px; margin: 20px; }
 }
