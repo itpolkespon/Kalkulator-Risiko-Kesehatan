@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Risiko EHRA Internasional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <h1>Kalkulator Risiko ADKL (Ingestion + Inhalation + Dermal)</h1>
+  <p class="subtitle">Standar Internasional (EPA/WHO/EFSA) untuk Health Risk Assessment</p>
+  
+  <p class="version" id="dataVersion">Data versi: -</p>
+
+  <!-- Jalur Paparan -->
+  <h2>Ingestion</h2>
+  <h3>Air Minum</h3>
+  <label for="C_air">Konsentrasi (mg/L)</label>
+  <input type="number" id="C_air" step="any" placeholder="0.01">
+  <label for="R_air">Asupan (L/hari)</label>
+  <input type="number" id="R_air" step="any" placeholder="2">
+
+  <h3>Makanan</h3>
+  <label for="C_food">Konsentrasi (mg/kg)</label>
+  <input type="number" id="C_food" step="any" placeholder="0.05">
+  <label for="R_food">Asupan (kg/hari)</label>
+  <input type="number" id="R_food" step="any" placeholder="1">
+
+  <h3>Minuman Lain</h3>
+  <label for="C_drink">Konsentrasi (mg/L)</label>
+  <input type="number" id="C_drink" step="any" placeholder="0.005">
+  <label for="R_drink">Asupan (L/hari)</label>
+  <input type="number" id="R_drink" step="any" placeholder="1">
+
+  <hr>
+
+  <h2>Inhalation</h2>
+  <label for="C_airu">Konsentrasi Udara (mg/m³)</label>
+  <input type="number" id="C_airu" step="any" placeholder="0.02">
+  <label for="R_airu">Volume Udara Terhirup (m³/hari)</label>
+  <input type="number" id="R_airu" step="any" placeholder="20">
+
+  <hr>
+
+  <h2>Dermal Contact</h2>
+  <label for="C_dermal">Konsentrasi Media (mg/L atau mg/kg)</label>
+  <input type="number" id="C_dermal" step="any" placeholder="0.01">
+  <label for="SA">Area Kontak Kulit (cm²)</label>
+  <input type="number" id="SA" step="any" placeholder="18000">
+  <label for="AF">Faktor Absorpsi (AF)</label>
+  <input type="number" id="AF" step="any" placeholder="0.01">
+
+  <hr>
+
+  <!-- Pilihan Logam Berat -->
+  <label for="logam">Pilih Kontaminan</label>
+  <select id="logam"></select>
+
+  <!-- Jenis Risiko -->
+  <label for="jenisRisiko">Jenis Risiko</label>
+  <select id="jenisRisiko" onchange="toggleInputs()">
+    <option value="non">Non-Karsinogenik</option>
+    <option value="kar">Karsinogenik</option>
+  </select>
+
+  <!-- Berat Badan -->
+  <label for="Wb">Berat Badan (kg)</label>
+  <input type="number" id="Wb" step="any" placeholder="60">
+
+  <!-- RfD / SF -->
+  <div id="rfdBox">
+    <label for="RfD">Reference Dose (RfD) – mg/kg/hari</label>
+    <input type="number" id="RfD" step="any">
+  </div>
+
+  <div id="sfBox">
+    <label for="SF">Slope Factor (SF) – per mg/kg/hari</label>
+    <input type="number" id="SF" step="any">
+  </div>
+
+  <!-- Bioaccumulation Factor -->
+  <div>
+    <label for="BAF">Bioaccumulation Factor (BAF)</label>
+    <input type="number" id="BAF" step="any" placeholder="1.5">
+  </div>
+
+  <!-- Faktor Ketidakpastian -->
+  <div>
+    <label for="UF">Uncertainty Factor (UF)</label>
+    <input type="number" id="UF" step="any" placeholder="1">
+  </div>
+
+  <button onclick="hitungRisiko()">Hitung Risiko</button>
+  <button onclick="downloadCSV()">Download Hasil</button>
+
+  <div id="hasil" class="result">—</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
